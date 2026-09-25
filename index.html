@@ -115,6 +115,19 @@ h2::after{content:"";display:block;width:44px;height:4px;background:var(--navy-2
 .chips li{font-size:.85rem;font-weight:600;padding:.25rem .7rem;border:1px solid rgba(255,255,255,.45);border-radius:999px;background:rgba(255,255,255,.08)}
 .contact .contact-lines{margin:0 0 1.5rem;line-height:1.9;opacity:.95}
 .contact .contact-lines a{color:#fff;font-weight:600}
+.chips.roles{gap:.6rem;margin:1.4rem 0 2rem}
+.chips.roles li{font-family:var(--head);font-size:1rem;font-weight:700;padding:.45rem 1.1rem}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media (max-width:720px){.quotes{grid-template-columns:1fr}}
+.quote{margin:0;background:var(--band);border-left:4px solid #F2C811;border-radius:2px;padding:1.4rem 1.5rem;display:flex;flex-direction:column;justify-content:space-between}
+.quote blockquote{margin:0 0 1rem;font-size:1.02rem;line-height:1.7;color:var(--ink)}
+.quote blockquote::before{content:"\201C";font-family:Georgia,serif;font-size:2.6rem;line-height:0;vertical-align:-.9rem;margin-right:.2rem;color:var(--navy-2)}
+.quote figcaption strong{display:block;font-family:var(--head)}
+.quote figcaption span{font-size:.88rem;color:var(--muted)}
+.more-rec{margin:1.25rem 0 0}
+.more-rec a{font-weight:600;color:var(--navy-2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .more-rec a,:root:not([data-theme="light"]) .quote blockquote::before{color:#8AB4F8}}
+:root[data-theme="dark"] .more-rec a,:root[data-theme="dark"] .quote blockquote::before{color:#8AB4F8}
 </style>
 </head>
 <body>
@@ -122,7 +135,7 @@ h2::after{content:"";display:block;width:44px;height:4px;background:var(--navy-2
 <header class="topbar">
   <div class="in">
     <span class="name">Ankit Namdev</span>
-    <nav aria-label="Sections"><a href="#recommendations">Recommendations</a><a href="#about">What I do</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+    <nav aria-label="Sections"><a href="#projects">Projects</a><a href="#recommendations">Recommendations</a><a href="#about">What I do</a><a href="#contact">Contact</a></nav>
   </div>
 </header>
 
@@ -131,15 +144,12 @@ h2::after{content:"";display:block;width:44px;height:4px;background:var(--navy-2
    <div class="hero-row">
     <div>
     <h1>Ankit Namdev</h1>
-    <p class="headline">Data Analyst | Business Analyst | BI Developer</p>
-    <p class="meta">6+ years in data analytics · Bengaluru, India · Open to remote roles</p>
-    <ul class="chips" aria-label="Core tools">
-      <li>SQL</li><li>Power BI</li><li>DAX</li><li>Power Query</li><li>Salesforce</li><li>Excel</li>
+    <ul class="chips roles" aria-label="Roles">
+      <li>Data Analyst</li><li>BI Developer</li><li>Business Analyst</li>
     </ul>
     <div class="btns">
       <a class="gbtn" href="Ankit_Namdev_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
       <a class="gbtn ghost" href="https://www.linkedin.com/in/ankitnamdev09" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="gbtn ghost" href="mailto:Ankitnamdev09@gmail.com?subject=Data%20Analyst%20opportunity">Email Me</a>
       <a class="gbtn ghost" href="https://wa.me/918109595862?text=Hi%20Ankit%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener">WhatsApp</a>
     </div>
     </div>
@@ -151,29 +161,6 @@ h2::after{content:"";display:block;width:44px;height:4px;background:var(--navy-2
     <div class="in">
       <h2>About</h2>
       <p class="center">I turn operational data into dashboards that teams use every day. I have 6+ years of experience in logistics, legal, finance and manufacturing, including 2 years working remotely with a US-based company.</p>
-    </div>
-  </section>
-
-  <section class="band" id="recommendations">
-    <div class="in">
-      <h2>Recommendations</h2>
-      <p class="center">Managers and colleagues I have worked with have shared recommendations about my work on LinkedIn.</p>
-      <div class="btns" style="justify-content:flex-start;margin-top:1.25rem">
-        <a class="gbtn solid" href="https://www.linkedin.com/in/ankitnamdev09/details/recommendations/" target="_blank" rel="noopener">Read recommendations on LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="in">
-      <h2>What I do</h2>
-      <div class="grid">
-        <div class="box"><h3>Build dashboards</h3><p>Power BI with DAX and Power Query</p></div>
-        <div class="box"><h3>Write SQL</h3><p>Joins, CTEs and window functions for clean reports</p></div>
-        <div class="box"><h3>Lead teams</h3><p>Led 8 analysts across 53+ centers, KPI from 60% to 94%</p></div>
-        <div class="box"><h3>Work remotely</h3><p>2 years with a US-based company</p></div>
-      </div>
-      <p class="tools">Tools: SQL · Power BI · Salesforce · Tableau · Excel</p>
     </div>
   </section>
 
@@ -221,14 +208,43 @@ h2::after{content:"";display:block;width:44px;height:4px;background:var(--navy-2
     </div>
   </section>
 
+  <section id="recommendations">
+    <div class="in">
+      <h2>Recommendations</h2>
+      <div class="quotes">
+        <figure class="quote">
+          <blockquote>He was meticulous in his work and someone I could genuinely depend on. He took the time to understand the details, think through his analysis carefully, and make sure the work was solid before putting it forward. He was also calm and confident when presenting his work&hellip; comfortable walking senior leadership through his findings and answering questions.</blockquote>
+          <figcaption><strong>Lucía Schonfeld</strong><span>Data Product &amp; Operations Lead · Managed Ankit directly</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>I highly recommend him as an outstanding colleague and collaborator. He is always willing to listen and offers valuable insights. His proficiency in Google Sheets, Power BI, and SQL showcases his strong analytical skills, making him a great asset to any team.</blockquote>
+          <figcaption><strong>Fabiana Eloisa Reggio Gallen</strong><span>Senior Data Analyst, Business Intelligence · Worked with Ankit</span></figcaption>
+        </figure>
+      </div>
+      <p class="more-rec"><a href="https://www.linkedin.com/in/ankitnamdev09/details/recommendations/" target="_blank" rel="noopener">Read the full recommendations on LinkedIn</a></p>
+    </div>
+  </section>
+
+  <section class="band" id="about">
+    <div class="in">
+      <h2>What I do</h2>
+      <div class="grid">
+        <div class="box"><h3>Build dashboards</h3><p>Power BI with DAX and Power Query</p></div>
+        <div class="box"><h3>Write SQL</h3><p>Joins, CTEs and window functions for clean reports</p></div>
+        <div class="box"><h3>Lead teams</h3><p>Led 8 analysts across 53+ centers, KPI from 60% to 94%</p></div>
+        <div class="box"><h3>Work remotely</h3><p>2 years with a US-based company</p></div>
+      </div>
+      <p class="tools">Tools: SQL · Power BI · Salesforce · Tableau · Excel</p>
+    </div>
+  </section>
+
   <section class="contact" id="contact">
     <div class="in">
       <h2>Contact</h2>
       <p>Open to remote Data Analyst and BI roles.</p>
       <p class="contact-lines">Email: <a href="mailto:Ankitnamdev09@gmail.com">Ankitnamdev09@gmail.com</a><br>WhatsApp: <a href="https://wa.me/918109595862" target="_blank" rel="noopener">+91 81095 95862</a></p>
       <div class="btns">
-        <a class="gbtn" href="mailto:Ankitnamdev09@gmail.com?subject=Data%20Analyst%20opportunity">Email Me</a>
-        <a class="gbtn ghost" href="https://wa.me/918109595862?text=Hi%20Ankit%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener">WhatsApp</a>
+        <a class="gbtn" href="https://wa.me/918109595862?text=Hi%20Ankit%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener">WhatsApp</a>
         <a class="gbtn ghost" href="https://www.linkedin.com/in/ankitnamdev09" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
