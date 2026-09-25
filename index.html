@@ -71,6 +71,13 @@ h2{font-weight:700;font-size:1.9rem;text-align:center;margin:0 0 1.5rem;color:va
 .shot{height:150px;border-radius:6px;background:var(--band);border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;text-align:center;padding:1rem}
 section.band .shot{background:var(--bg)}
 .proj h3{margin:0 0 .25rem;font-size:1.2rem}
+.proj.featured{grid-template-columns:1fr}
+.shot-img{display:block;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.shot-img img{display:block;width:100%;height:auto}
+.proj .st.done{color:#0F766E}
+.insights{margin:.25rem 0 .75rem;padding-left:1.2rem;color:var(--muted)}
+.insights li{margin-bottom:.25rem}
+.note-small{font-size:.85rem;font-style:italic}
 .proj .st{font-size:.85rem;font-weight:700;color:var(--muted);margin-bottom:.5rem}
 .proj .st.live{color:#B06000}
 .proj p{margin:0 0 .5rem;color:var(--muted)}
@@ -162,13 +169,23 @@ h2::after{content:"";display:block;width:44px;height:4px;background:var(--navy-2
   <section class="band" id="projects">
     <div class="in">
       <h2>Power BI Projects</h2>
-      <div class="proj">
-        <div class="shot">Dashboard screenshot goes here</div>
+      <div class="proj featured">
+        <a class="shot-img" href="logistics_dashboard.png" target="_blank" rel="noopener">
+          <img src="logistics_dashboard.png" alt="Logistics Delivery Performance Dashboard in Power BI showing 6,000 orders, 75.3% on-time delivery, 2.98 average delivery days and ₹1,240 cost per order, with charts by month, hub, client and delivery mode" loading="lazy">
+        </a>
         <div>
           <h3>Logistics Delivery Performance Dashboard</h3>
-          <div class="st live">In progress</div>
-          <p>Tracks on-time delivery, delivery days and cost per order across 12 hubs. Shows which hubs are running late and how performance changes month to month.</p>
-          <p><strong>Tools:</strong> Power BI, Power Query, DAX</p>
+          <div class="st done">Completed</div>
+          <p>Tracks on-time delivery, delivery days and cost per order for 6,000 orders across 12 hubs and 6 clients in 2025. Filters by region, client and month.</p>
+          <p><strong>What it shows:</strong></p>
+          <ul class="insights">
+            <li>Overall on-time delivery is 75.3%, with an average of 2.98 days per delivery</li>
+            <li>Bhubaneswar Hub has the lowest on-time rate (about 52%) and Bengaluru Hub the highest (about 88%)</li>
+            <li>Order volume peaks in October, and QuickBite Foods is the largest client</li>
+          </ul>
+          <p><strong>What I did:</strong> Cleaned the data in Power Query (removed duplicates, fixed text case and extra spaces), built a star-schema model with a date table, and wrote DAX measures for on-time %, average days and cost per order.</p>
+          <p><strong>Tools:</strong> Power BI, Power Query, DAX, Data Modeling</p>
+          <p class="note-small">Built on synthetic data for portfolio practice.</p>
         </div>
       </div>
       <div class="proj">
