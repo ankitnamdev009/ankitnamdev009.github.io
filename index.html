@@ -188,13 +188,23 @@ h2::after{content:"";display:block;width:44px;height:4px;background:var(--navy-2
           <p class="note-small">Built on synthetic data for portfolio practice.</p>
         </div>
       </div>
-      <div class="proj">
-        <div class="shot">Screenshot (coming soon)</div>
+      <div class="proj featured">
+        <a class="shot-img" href="legal_dashboard.png" target="_blank" rel="noopener">
+          <img src="legal_dashboard.png" alt="Legal Case Operations Dashboard in Power BI showing 453 open cases, 2,047 closed cases, 122 average days to close, 76% win rate and $27.95M fees earned, with a practice area scorecard, attorney workload, case sources and fees by team" loading="lazy">
+        </a>
         <div>
           <h3>Legal Case Operations Dashboard</h3>
-          <div class="st">Coming soon</div>
-          <p>Tracks open and closed cases, time to close and team workload, to help a law firm manage its caseload.</p>
-          <p><strong>Tools:</strong> Power BI, DAX, Data Modeling</p>
+          <div class="st done">Completed</div>
+          <p>Tracks 2,500 cases across 10 attorneys and 5 practice areas (2024–2025): open and closed cases, time to close, win rate and fees. Filters by team, office and year.</p>
+          <p><strong>What it shows:</strong></p>
+          <ul class="insights">
+            <li>Personal Injury earns the most fees but is also the slowest to close (158 days on average) and holds over half of all open cases</li>
+            <li>Estate Planning closes fastest (66 days), and Criminal Defense has the highest win rate (78%)</li>
+            <li>The website brings in the most new cases (30%), followed by referrals (25%)</li>
+          </ul>
+          <p><strong>What I did:</strong> Cleaned the case data in Power Query and added a days-to-close column, linked a date table to both open and close dates, and used an inactive relationship with USERELATIONSHIP in DAX to count cases by the date they closed. Built a practice area scorecard with a matrix visual.</p>
+          <p><strong>Tools:</strong> Power BI, Power Query, DAX, Data Modeling</p>
+          <p class="note-small">Built on synthetic data for portfolio practice.</p>
         </div>
       </div>
       <div class="proj">
